@@ -13,7 +13,7 @@
 ### 1. Клонируйте репозиторий
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/alieveldar/meat_facture.git
 cd your-project
 ```
 
