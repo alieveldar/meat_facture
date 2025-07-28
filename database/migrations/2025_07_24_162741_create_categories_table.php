@@ -13,25 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone')->unique();
-            $table->timestamp('phone_verified_at')->nullable();
-            $table->string('address');
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name')->unique();
+            $table->foreignId('parent_id')->nullable()->constrained('product_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
+    /**     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('categories');
     }
 };
